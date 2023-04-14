@@ -1,3 +1,7 @@
+# This schema file is generated and should not be stored.
+schema.verbose.sql
+schema.concise.sql
+
 # Logs
 logs
 *.log
