@@ -102,5 +102,5 @@ export async function handleGenSQL(req: Request, res: Response) {
     res.status(500).json(msg);
     return;
   }
-  res.json({ queryResponse });
+  res.json({ query, queryResponse });
 };
