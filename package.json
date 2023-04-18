@@ -12,7 +12,9 @@
     "dev": "concurrently \"npm run build:watch\" \"npm run start:watch\"",
     "db:init": "knex --knexfile=./dist/db/knexfile.js migrate:up 20230407195836_ddl.js",
     "db:uninit": "knex --knexfile=./dist/db/knexfile.js migrate:down 20230407195836_ddl.js",
-    "db:seed": "knex --knexfile=./dist/db/knexfile.js seed:run"
+    "db:seed": "knex --knexfile=./dist/db/knexfile.js seed:run",
+    "db:exportschema": "./db/export-schema.sh",
+    "call": "./call-gen-sql.sh"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
   },
   "devDependencies": {
     "@tsconfig/node18": "1.0.1",
+    "@types/cors": "^2.8.13",
     "@types/express": "4.17.17",
     "@types/node": "18.15.11",
     "@types/pg": "8.6.6",
