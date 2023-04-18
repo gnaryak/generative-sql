@@ -16,6 +16,10 @@ This work was done on macOS 13. Some adaptation (primarily to the shell scripts)
 
 ### Prerequisites
 
+#### Node JS
+
+The code requires Node JS version 18, and the corresponding npm version 8. You will need to install those locally if you don't already have them.
+
 #### PostgreSQL
 
 The code in this repo connects to a PostgreSQL database in order to operate. You can install PostgreSQL locally, or you can point to a hosted database such as AWS RDS or GCP Cloud SQL. If you run PostgreSQL locally, be sure to start it.
@@ -26,11 +30,22 @@ _Note: The code in this initial version of the repo uses the PostgreSQL database
 
 #### OpenAI
 
-We use OpenAI API's to generate the SQL query. Accordingly, the codebase needs an OpenAI API key that points to an active OpenAI account in order to function. If you don't yet have an OpenAI account, you will need to get [one](https://platform.openai.com/signup).
+We use OpenAI API's to generate the SQL query. Accordingly, the codebase needs an OpenAI API key that points to an active OpenAI account in order to function. If you don't yet have an OpenAI account, you will need to [get one](https://platform.openai.com/signup).
 
 #### .env
 
 The required environment variables must be defined in the `.env` file in the root directory. Refer to `.env.template` for documentation about the variables. These variables allow the system to connect to the PostgreSQL database and to OpenAI.
+
+### Clone this Repo
+
+From a command prompt, clone the repo via SSH with
+`git clone git@github.com:gnaryak/generative-sql.git`
+or via https with
+`git clone https://github.com/gnaryak/generative-sql.git`
+
+### Install dependencies
+
+Run `npm i` from the main `generative-sql` directory. All the subsequent `npm` commands should also be run from this same directory.
 
 ### Build the Server Codebase
 
@@ -59,13 +74,13 @@ This creates the file `db/schema.concise.sql` from the database. The contents of
 
 _Note: This script expects the PGDUMP environment variable to be defined in .env._
 
-_Note: If you want to use your own database in this system, you must create `db/schema.concise.sql` that contains the table definitions and relationships. You will also need to ensure that the database exists and is populated._
+_Note: If you want to use your own database in this system, you must create `db/schema.concise.sql` that contains the table definitions and relationships. You will also need to ensure that the database exists and is populated, and that the .env properties point to it._
 
 ### Start the Server
 
 `npm run start` will start the server normally.
 
-`npm run dev` will start the server in development mode so that it will immediately and automatically update itself when files are changed.
+`npm run dev` will start the server in development mode so that it will automatically update itself when files are changed.
 
 The server runs on localhost on the port indicated in the .env file.
 
