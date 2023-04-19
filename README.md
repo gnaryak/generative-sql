@@ -22,7 +22,7 @@ The code requires Node JS version 18, and the corresponding npm version 8. You w
 
 #### PostgreSQL
 
-The code in this repo connects to a PostgreSQL database in order to operate. You can install PostgreSQL locally, or you can point to a hosted database such as AWS RDS or GCP Cloud SQL. If you run PostgreSQL locally, be sure to start it.
+The code in this repo connects to a PostgreSQL database in order to operate. You can install PostgreSQL locally, or you can point to a hosted database such as AWS RDS or GCP Cloud SQL.
 
 The repo exports the database structure so that we can include it in the prompts we send to OpenAI. We use the `pg_dump` tool to export the structure of the database, so that must be installed locally. If you installed PostgreSQL locally, you will already have it. If not, you will need to install the PostgreSQL client.
 
